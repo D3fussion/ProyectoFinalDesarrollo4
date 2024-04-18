@@ -131,5 +131,11 @@ def crear_diccionario_letras(diccionario: dict):
     return diccionario_letras
 
 
+def ordenar_diccionario(diccionario: dict):
+    llaves_ordenadas = sorted(diccionario.keys(), key=lambda x: x.lower())
+    diccionario_ordenado = {key: diccionario[key] for key in llaves_ordenadas}
+    return diccionario_ordenado
+
+
 if __name__ == '__main__':
-    print(crear_diccionario_palabras(comprobar_existencia_csv()))
+    print(ordenar_diccionario(comprobar_existencia_csv()))
